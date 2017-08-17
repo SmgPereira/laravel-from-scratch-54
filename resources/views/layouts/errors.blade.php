@@ -1,7 +1,12 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: sergio
- * Date: 8/17/17
- * Time: 3:59 PM
- */
+@if (count($errors))
+    <div class="form-group">
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+
+            </ul>
+        </div>
+    </div>
+@endif
