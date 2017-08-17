@@ -10,11 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\Task;
 
 Route::get('/', 'PostsController@index');
 Route::get('/posts/create', 'PostsController@create');
 Route::post('/posts', 'PostsController@store');
+Route::get('/posts/{post}', 'PostsController@show');
 
 
 
@@ -22,14 +22,12 @@ Route::post('/posts', 'PostsController@store');
 
 
 
-//Route::get('/posts/{post}', 'PostsController@show');
 
 
-
-Route::get('/about', function() {
+/*Route::get('/about', function() {
     return view('about');
 });
 
 Route::get('/tasks','TasksController@index');
-Route::get('/tasks/{task}', 'TasksController@show');
+Route::get('/tasks/{task}', 'TasksController@show');*/
 
