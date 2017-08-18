@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-//  protected $fillable = ['title', 'body'];
-    protected $guarded = [];
+    protected $guarded = [];                //or    protected $fillable = ['title', 'body'];
+
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
