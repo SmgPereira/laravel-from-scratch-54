@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;  //posto por mim devido a (laravel-news.com/laravel-5-4-key-too-long-error)
 
+use \App\Billing\Stripe;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -30,6 +32,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(Stripe::class, function() {
+            return new Stripe(config('services.stripe.secret'));
+        });
     }
+
 }
