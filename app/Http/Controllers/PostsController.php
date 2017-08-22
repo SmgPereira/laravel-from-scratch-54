@@ -41,7 +41,6 @@ class PostsController extends Controller
             new Post(request(['title', 'body']))
         );
 
-
         //And redirect to the homepage
         return redirect('/');
 
